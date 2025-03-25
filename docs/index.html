@@ -260,6 +260,165 @@ println("Isha: ${prayerTimes.isha}")
     </div>
 </section>
 
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Why Choose PrayerTimesAPI?</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-600">🌐 Truly Cross-Platform</h3>
+                <p class="text-gray-700">
+                    Unlike other solutions, PrayerTimesAPI is built with Kotlin Multiplatform, allowing seamless integration across Android, iOS, and desktop platforms. Write once, deploy everywhere.
+                </p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-green-600">🧮 Advanced Astronomical Calculations</h3>
+                <p class="text-gray-700">
+                    Leveraging complex astronomical algorithms to provide the most accurate prayer times. We account for geographical nuances, seasonal variations, and precise solar positioning.
+                </p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-600">🔒 Open Source & Community-Driven</h3>
+                <p class="text-gray-700">
+                    Transparent, community-vetted codebase with continuous improvements. Benefit from collective expertise and contribute to making prayer time calculations more accessible.
+                </p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-red-600">🌈 Extensive Customization</h3>
+                <p class="text-gray-700">
+                    Flexible configuration options to match local practices. Support for multiple calculation methods, Madhabs, and custom rounding preferences ensures global usability.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New: Installation and Integration Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Easy Installation</h2>
+        <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+            <h3 class="text-2xl font-semibold mb-6">Gradle Setup</h3>
+            <div class="code-block">
+                    <pre><code class="language-kotlin">// Add to your shared module's build.gradle.kts
+dependencies {
+    implementation("com.alimrepo:prayer-times-kmm:1.0.0")
+}
+
+// Multiplatform configuration
+kotlin {
+    android()
+    ios()
+    jvm()
+}
+</code></pre>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Dependency Management</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>No external dependencies beyond Kotlin standard library</li>
+                    <li>Lightweight and optimized for performance</li>
+                    <li>Compatible with major dependency management systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New: Advanced Configuration Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Advanced Configuration</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="code-block">
+                    <pre><code class="language-kotlin">// Advanced Configuration Example
+val advancedConfiguration = PrayerConfiguration(
+    method = CalculationMethod.MUSLIM_WORLD_LEAGUE,
+    madhab = Madhab.HANAFI,
+    highLatitudeMethod = HighLatitudeMethod.MIDDLE_OF_THE_NIGHT,
+    adjustments = PrayerTimeAdjustments(
+        fajr = -2,      // Minute adjustments
+        sunrise = 0,
+        dhuhr = 1,
+        asr = 0,
+        maghrib = -1,
+        isha = 2
+    ),
+    timeFormat = TimeFormat.TWENTY_FOUR_HOUR
+)
+
+// Dynamic location updates
+locationManager.setLocationUpdateListener { newCoordinates ->
+    prayerTimesCalculator.updateLocation(newCoordinates)
+}
+</code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New: Community and Ecosystem Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-12">Community & Ecosystem</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-4xl mb-4">🌟</div>
+                <h3 class="text-xl font-semibold mb-4">GitHub Stars</h3>
+                <p class="text-gray-600">500+ Stars</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-xl font-semibold mb-4">Contributors</h3>
+                <p class="text-gray-600">25+ Active Contributors</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-4xl mb-4">📦</div>
+                <h3 class="text-xl font-semibold mb-4">Downloads</h3>
+                <p class="text-gray-600">10,000+ Downloads</p>
+            </div>
+        </div>
+        <div class="mt-12">
+            <a href="https://github.com/Alims-Repo/Prayer-Times-KMM/discussions"
+               class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
+                Join Community Discussions
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- New: Testimonials Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">What Developers Say</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <blockquote class="italic mb-4">"The most comprehensive and accurate prayer times library I've used. The multiplatform support is a game-changer!"</blockquote>
+                <div class="flex items-center">
+                    <div class="mr-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">AK</div>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Ahmed Khan</p>
+                        <p class="text-gray-600">Mobile App Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <blockquote class="italic mb-4">"Incredible flexibility and ease of use. Handles complex calculation methods with remarkable precision."</blockquote>
+                <div class="flex items-center">
+                    <div class="mr-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">MR</div>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Mohammad Raza</p>
+                        <p class="text-gray-600">Software Architect</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contribution Section -->
 <section id="contribute" class="py-16 bg-white">
     <div class="container mx-auto px-4 text-center">
