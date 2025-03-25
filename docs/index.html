@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrayerTimesAPI - Precision Islamic Prayer Time Calculations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+        }
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f8;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .section-divider {
+            border-top: 2px solid rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary-color">PrayerTimesAPI</div>
+            <div class="space-x-6">
+                <a href="#features" class="hover:text-blue-600 transition">Features</a>
+                <a href="#getting-started" class="hover:text-blue-600 transition">Docs</a>
+                <a href="#platforms" class="hover:text-blue-600 transition">Platforms</a>
+                <a href="#contribute" class="hover:text-blue-600 transition">Contribute</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-hero text-white pt-24 pb-16 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-black mb-6 tracking-tight">PrayerTimesAPI</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
+                A sophisticated Kotlin Multiplatform library for precise, customizable Islamic prayer time calculations across global locations.
+            </p>
+            <div class="space-x-4">
+                <a href="#getting-started" class="bg-white text-purple-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                    Get Started
+                </a>
+                <a href="https://github.com/yourusername/PrayerTimesAPI" target="_blank" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition">
+                    GitHub Repository
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Powerful Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-6 text-blue-600">🌍</div>
+                    <h3 class="text-2xl font-semibold mb-4">Global Precision</h3>
+                    <p>Accurate prayer time calculations for any geographical location with advanced astronomical computations.</p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-6 text-green-600">🕰️</div>
+                    <h3 class="text-2xl font-semibold mb-4">Comprehensive Calculations</h3>
+                    <p>Calculate all prayer times with precise solar time tracking, seasonal adjustments, and twilight calculations.</p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-6 text-purple-600">🔧</div>
+                    <h3 class="text-2xl font-semibold mb-4">Flexible Configuration</h3>
+                    <p>Extensive customization options including multiple calculation methods, Madhab support, and rounding preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Example Section -->
+    <section id="getting-started" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Quick Start Guide</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="code-block">
+                    <pre><code class="language-kotlin">// Define geographical coordinates
+val coordinates = Coordinates(
+    latitude = 21.4225,   // Makkah Latitude
+    longitude = 39.8262   // Makkah Longitude
+)
+
+// Configure calculation parameters
+val calculationParameters = CalculationParameters(
+    method = CalculationMethod.UMM_AL_QURA,
+    madhab = Madhab.SHAFI,
+    rounding = RoundingType.NEAREST
+)
+
+// Calculate prayer times
+val prayerTimes = PrayerTimes(
+    coordinates = coordinates,
+    dateComponents = DateComponents.now(),
+    calculationParameters = calculationParameters
+)
+
+// Access individual prayer times
+println("Fajr: ${prayerTimes.fajr}")
+println("Sunrise: ${prayerTimes.sunrise}")
+println("Dhuhr: ${prayerTimes.dhuhr}")
+println("Asr: ${prayerTimes.asr}")
+println("Maghrib: ${prayerTimes.maghrib}")
+println("Isha: ${prayerTimes.isha}")
+</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Platform Support</h2>
+            <div class="flex justify-center space-x-12">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🤖</div>
+                    <h3 class="text-xl font-semibold">Android</h3>
+                    <p class="text-gray-600">Full Native Support</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold">iOS</h3>
+                    <p class="text-gray-600">Complete Integration</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💻</div>
+                    <h3 class="text-xl font-semibold">JVM</h3>
+                    <p class="text-gray-600">Desktop Applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculation Methods Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Supported Calculation Methods</h2>
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Islamic Methods</h3>
+                    <ul class="list-disc pl-5">
+                        <li>Muslim World League</li>
+                        <li>Egyptian Authority</li>
+                        <li>Umm Al-Qura University</li>
+                        <li>Gulf Region</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Regional Methods</h3>
+                    <ul class="list-disc pl-5">
+                        <li>Kuwait</li>
+                        <li>Qatar</li>
+                        <li>Singapore</li>
+                        <li>Moon Sighting Committee</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Additional Methods</h3>
+                    <ul class="list-disc pl-5">
+                        <li>Karachi</li>
+                        <li>Tehran</li>
+                        <li>North America</li>
+                        <li>Custom Configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Section -->
+    <section id="contribute" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">Contribute to the Project</h2>
+            <p class="max-w-2xl mx-auto mb-12 text-lg text-gray-600">
+                Join our open-source community and help improve PrayerTimesAPI. Whether it's bug fixes, documentation, or new features, your contribution is valuable.
+            </p>
+            <div class="space-x-4">
+                <a href="https://github.com/yourusername/PrayerTimesAPI/issues" 
+                   class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
+                    Report Issues
+                </a>
+                <a href="https://github.com/yourusername/PrayerTimesAPI/pulls" 
+                   class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition">
+                    Submit Pull Request
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">PrayerTimesAPI</h3>
+            <p class="mb-6 max-w-2xl mx-auto">
+                Precision Islamic Prayer Time Calculations for Kotlin Multiplatform Developers
+            </p>
+            <div class="space-x-4 mb-8">
+                <a href="#" class="hover:text-blue-400">Documentation</a>
+                <a href="#" class="hover:text-blue-400">License</a>
+                <a href="#" class="hover:text-blue-400">Privacy Policy</a>
+            </div>
+            <p class="text-sm text-gray-400">
+                &copy; 2025 Alim Sourav. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
