@@ -10,6 +10,25 @@ plugins {
 kotlin {
 
     jvm()
+    linuxX64()
+    linuxArm64()
+    mingwX64()
+
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
+    macosArm64()
+    macosX64()
+
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    watchosSimulatorArm64()
+
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
+    }
 
     androidTarget {
         compilations.all {
@@ -33,10 +52,6 @@ kotlin {
     }
 
     sourceSets {
-        jvmMain.dependencies {
-
-        }
-
         commonMain.dependencies {
             api("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
         }
@@ -60,10 +75,11 @@ android {
 }
 
 mavenPublishing {
+
     coordinates(
         groupId = "io.github.alims-repo",
         artifactId = "prayer-times-kmm",
-        version = "1.0.1-beta"
+        version = "1.0.2-beta"
     )
 
     pom {
