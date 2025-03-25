@@ -24,12 +24,46 @@
             color: var(--secondary-color);
         }
         .code-block {
-            background-color: #2d2d2d;
-            color: #f8f8f8;
+            background-color: #2b2b2b;
+            color: #a9b7c6;
             border-radius: 0.5rem;
             padding: 1.5rem;
             font-size: 0.9rem;
             overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            line-height: 1.6;
+        }
+
+        .code-block .keyword {
+            color: #cc7832; /* Keywords like val, fun, class */
+        }
+
+        .code-block .string {
+            color: #6a8759; /* String literals */
+        }
+
+        .code-block .number {
+            color: #6897bb; /* Numeric literals */
+        }
+
+        .code-block .comment {
+            color: #808080; /* Comments */
+        }
+
+        .code-block .function {
+            color: #ffc66d; /* Function names */
+        }
+
+        .code-block .class-name {
+            color: #4ec9b0; /* Class and type names */
+        }
+
+        .code-block .punctuation {
+            color: #a9b7c6; /* Punctuation like (), {}, : */
+        }
+
+        .code-block .method-call {
+            color: #9876aa; /* Method calls */
         }
         .section-divider {
             border-top: 2px solid rgba(0,0,0,0.1);
@@ -167,33 +201,34 @@
         <h2 class="text-4xl font-bold text-center mb-12">Quick Start Guide</h2>
         <div class="max-w-4xl mx-auto">
             <div class="code-block overflow-x-auto">
-                    <pre><code class="language-kotlin">// Define geographical coordinates
-val coordinates = Coordinates(
-    latitude = 21.4225,   // Makkah Latitude
-    longitude = 39.8262   // Makkah Longitude
+                <pre><code class="language-kotlin">
+<span class="comment">// Define geographical coordinates</span>
+<span class="keyword">val</span> coordinates = <span class="class-name">Coordinates</span>(
+    <span class="method-call">latitude</span> = <span class="number">21.4225</span>,   <span class="comment">// Makkah Latitude</span>
+    <span class="method-call">longitude</span> = <span class="number">39.8262</span>   <span class="comment">// Makkah Longitude</span>
 )
 
-// Configure calculation parameters
-val calculationParameters = CalculationParameters(
-    method = CalculationMethod.UMM_AL_QURA,
-    madhab = Madhab.SHAFI,
-    rounding = RoundingType.NEAREST
+<span class="comment">// Configure calculation parameters</span>
+<span class="keyword">val</span> calculationParameters = <span class="class-name">CalculationParameters</span>(
+    <span class="method-call">method</span> = <span class="class-name">CalculationMethod</span>.<span class="keyword">UMM_AL_QURA</span>,
+    <span class="method-call">madhab</span> = <span class="class-name">Madhab</span>.<span class="keyword">SHAFI</span>,
+    <span class="method-call">rounding</span> = <span class="class-name">RoundingType</span>.<span class="keyword">NEAREST</span>
 )
 
-// Calculate prayer times
-val prayerTimes = PrayerTimes(
-    coordinates = coordinates,
-    dateComponents = DateComponents.now(),
-    calculationParameters = calculationParameters
+<span class="comment">// Calculate prayer times</span>
+<span class="keyword">val</span> prayerTimes = <span class="class-name">PrayerTimes</span>(
+    <span class="method-call">coordinates</span> = coordinates,
+    <span class="method-call">dateComponents</span> = <span class="class-name">DateComponents</span>.<span class="method-call">now</span>(),
+    <span class="method-call">calculationParameters</span> = calculationParameters
 )
 
-// Access individual prayer times
-println("Fajr: ${prayerTimes.fajr}")
-println("Sunrise: ${prayerTimes.sunrise}")
-println("Dhuhr: ${prayerTimes.dhuhr}")
-println("Asr: ${prayerTimes.asr}")
-println("Maghrib: ${prayerTimes.maghrib}")
-println("Isha: ${prayerTimes.isha}")
+<span class="comment">// Access individual prayer times</span>
+<span class="method-call">println</span>(<span class="string">"Fajr: ${prayerTimes.fajr}"</span>)
+<span class="method-call">println</span>(<span class="string">"Sunrise: ${prayerTimes.sunrise}"</span>)
+<span class="method-call">println</span>(<span class="string">"Dhuhr: ${prayerTimes.dhuhr}"</span>)
+<span class="method-call">println</span>(<span class="string">"Asr: ${prayerTimes.asr}"</span>)
+<span class="method-call">println</span>(<span class="string">"Maghrib: ${prayerTimes.maghrib}"</span>)
+<span class="method-call">println</span>(<span class="string">"Isha: ${prayerTimes.isha}"</span>)
 </code></pre>
             </div>
         </div>
@@ -293,22 +328,23 @@ println("Isha: ${prayerTimes.isha}")
 </section>
 
 <!-- New: Installation and Integration Section -->
-<section class="py-16 bg-gray-50">
+<<section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-12">Easy Installation</h2>
         <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
             <h3 class="text-2xl font-semibold mb-6">Gradle Setup</h3>
             <div class="code-block">
-                    <pre><code class="language-kotlin">// Add to your shared module's build.gradle.kts
+                <pre><code class="language-kotlin">
+<span class="comment">// Add to your shared module's build.gradle.kts</span>
 dependencies {
-    implementation("com.alimrepo:prayer-times-kmm:1.0.0")
+    <span class="method-call">implementation</span>(<span class="string">"com.alimrepo:prayer-times-kmm:1.0.0"</span>)
 }
 
-// Multiplatform configuration
+<span class="comment">// Multiplatform configuration</span>
 kotlin {
-    android()
-    ios()
-    jvm()
+    <span class="method-call">android</span>()
+    <span class="method-call">ios</span>()
+    <span class="method-call">jvm</span>()
 }
 </code></pre>
             </div>
@@ -330,25 +366,26 @@ kotlin {
         <h2 class="text-4xl font-bold text-center mb-12">Advanced Configuration</h2>
         <div class="max-w-4xl mx-auto">
             <div class="code-block">
-                    <pre><code class="language-kotlin">// Advanced Configuration Example
-val advancedConfiguration = PrayerConfiguration(
-    method = CalculationMethod.MUSLIM_WORLD_LEAGUE,
-    madhab = Madhab.HANAFI,
-    highLatitudeMethod = HighLatitudeMethod.MIDDLE_OF_THE_NIGHT,
-    adjustments = PrayerTimeAdjustments(
-        fajr = -2,      // Minute adjustments
-        sunrise = 0,
-        dhuhr = 1,
-        asr = 0,
-        maghrib = -1,
-        isha = 2
+                <pre><code class="language-kotlin">
+<span class="comment">// Advanced Configuration Example</span>
+<span class="keyword">val</span> advancedConfiguration = <span class="class-name">PrayerConfiguration</span>(
+    <span class="method-call">method</span> = <span class="class-name">CalculationMethod</span>.<span class="keyword">MUSLIM_WORLD_LEAGUE</span>,
+    <span class="method-call">madhab</span> = <span class="class-name">Madhab</span>.<span class="keyword">HANAFI</span>,
+    <span class="method-call">highLatitudeMethod</span> = <span class="class-name">HighLatitudeMethod</span>.<span class="keyword">MIDDLE_OF_THE_NIGHT</span>,
+    <span class="method-call">adjustments</span> = <span class="class-name">PrayerTimeAdjustments</span>(
+        <span class="method-call">fajr</span> = <span class="number">-2</span>,      <span class="comment">// Minute adjustments</span>
+        <span class="method-call">sunrise</span> = <span class="number">0</span>,
+        <span class="method-call">dhuhr</span> = <span class="number">1</span>,
+        <span class="method-call">asr</span> = <span class="number">0</span>,
+        <span class="method-call">maghrib</span> = <span class="number">-1</span>,
+        <span class="method-call">isha</span> = <span class="number">2</span>
     ),
-    timeFormat = TimeFormat.TWENTY_FOUR_HOUR
+    <span class="method-call">timeFormat</span> = <span class="class-name">TimeFormat</span>.<span class="keyword">TWENTY_FOUR_HOUR</span>
 )
 
-// Dynamic location updates
-locationManager.setLocationUpdateListener { newCoordinates ->
-    prayerTimesCalculator.updateLocation(newCoordinates)
+<span class="comment">// Dynamic location updates</span>
+locationManager.<span class="method-call">setLocationUpdateListener</span> { newCoordinates <span class="punctuation">-></span>
+    prayerTimesCalculator.<span class="method-call">updateLocation</span>(newCoordinates)
 }
 </code></pre>
             </div>
