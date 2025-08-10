@@ -46,14 +46,14 @@ Prayer Times KMM is a cutting-edge Kotlin Multiplatform library designed to prov
 #### Kotlin DSL (`build.gradle.kts`)
 ```kotlin
 dependencies {
-    implementation("com.alim:prayer-times-kmm:1.0.0")
+    implementation("io.github.alims-repo:prayer-times-kmm:1.0.4-beta")
 }
 ```
 
 #### Groovy (`build.gradle`)
 ```groovy
 dependencies {
-    implementation 'com.alim:prayer-times-kmm:1.0.0'
+    implementation 'io.github.alims-repo:prayer-times-kmm:1.0.4-beta'
 }
 ```
 
